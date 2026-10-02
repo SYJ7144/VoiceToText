@@ -14,6 +14,7 @@
   const exportSrt = document.getElementById("export-srt");
   const exportVtt = document.getElementById("export-vtt");
   const authArea = document.getElementById("auth-area");
+  const modelInfo = document.getElementById("model-info");
 
   let currentJobId = null;
   let currentSegments = [];
@@ -62,6 +63,15 @@
       authArea.appendChild(btn);
     }
   }
+
+  // ---- 모델별 차이점 설명 ------------------------------------------------
+  function updateModelInfo() {
+    const key = `model_info_${modelSelect.value.replace(/-/g, "_")}`;
+    modelInfo.textContent = t(key);
+  }
+  modelSelect.addEventListener("change", updateModelInfo);
+  document.addEventListener("langchange", updateModelInfo);
+  updateModelInfo();
 
   // ---- 업로드 / 드래그앤드롭 -------------------------------------------
   dropzone.addEventListener("click", () => fileInput.click());

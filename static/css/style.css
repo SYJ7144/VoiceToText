@@ -107,6 +107,12 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
   justify-content: center;
 }
 
+.lang-btn {
+  min-width: 60px;
+  justify-content: center;
+  text-align: center;
+}
+
 .panel {
   background: var(--surface);
   border: 1px solid var(--border);

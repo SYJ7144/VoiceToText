@@ -1,4 +1,4 @@
-# EnKorTranslator
+# VoiceToText
 
 음성 파일을 창에 끌어다 놓으면 텍스트로 전사해 `.txt` 파일로 저장하는 GUI 프로그램입니다.
 로컬 Whisper(`faster-whisper`) 기반이라 한국어·영어 음성을 인터넷 연결 없이 오프라인으로 전사할 수 있습니다.

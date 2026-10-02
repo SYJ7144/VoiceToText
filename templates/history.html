@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VoiceToText — History</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  {% include "_header.html" %}
+
+  <div class="container">
+    <div class="panel">
+      <div id="login-required" class="empty-state hidden">
+        <p data-i18n="login_prompt"></p>
+        <div id="login-buttons" class="record-row"></div>
+      </div>
+
+      <div id="history-detail" class="hidden">
+        <button id="detail-back" class="btn" data-i18n="back_home">← Back</button>
+        <div id="detail-segments" class="segments"></div>
+        <audio id="detail-player" controls class="hidden"></audio>
+        <div class="export-row">
+          <a id="detail-export-txt" class="btn" data-i18n="export_txt"></a>
+          <a id="detail-export-srt" class="btn" data-i18n="export_srt"></a>
+          <a id="detail-export-vtt" class="btn" data-i18n="export_vtt"></a>
+        </div>
+      </div>
+
+      <div id="history-list"></div>
+    </div>
+  </div>
+
+  <script src="/static/js/i18n.js"></script>
+  <script src="/static/js/theme.js"></script>
+  <script src="/static/js/history.js"></script>
+</body>
+</html>

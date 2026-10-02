@@ -1,2 +1,16 @@
+# 공용 (전사 엔진)
 faster-whisper>=1.2.0
+
+# 데스크탑 GUI
 tkinterdnd2>=0.4.0
+
+# 웹 서비스
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+jinja2>=3.1.0
+sqlalchemy>=2.0.0
+authlib>=1.3.0
+httpx>=0.27.0
+itsdangerous>=2.2.0
+python-dotenv>=1.0.0

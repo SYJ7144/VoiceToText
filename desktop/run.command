@@ -1,6 +1,6 @@
 #!/bin/bash
-# 더블클릭으로 실행할 수 있는 런처 (macOS)
-cd "$(dirname "$0")"
+# 더블클릭으로 실행할 수 있는 런처 (macOS) - 데스크탑 GUI 버전
+cd "$(dirname "$0")/.."
 
 if [ ! -d venv ]; then
     echo "최초 실행: 가상환경을 만들고 필요한 패키지를 설치합니다…"
@@ -9,4 +9,4 @@ if [ ! -d venv ]; then
     ./venv/bin/pip install -r requirements.txt
 fi
 
-exec ./venv/bin/python transcribe_gui.py
+exec ./venv/bin/python desktop/transcribe_gui.py

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VoiceToText</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  {% include "_header.html" %}
+
+  <div class="container">
+    <div class="panel">
+      <div class="options-row">
+        <div>
+          <label data-i18n="model_label">Model</label>
+          <select id="model-select">
+            {% for m in models %}
+            <option value="{{ m }}" {% if m == "small" %}selected{% endif %}>{{ m }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label data-i18n="language_label">Language</label>
+          <select id="language-select">
+            {% for l in languages %}
+            <option value="{{ l }}" {% if l == "auto" %}selected{% endif %} data-i18n-option="lang_{{ l }}"></option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div id="dropzone" tabindex="0">
+        <div data-i18n="dropzone_hint" style="white-space: pre-line;"></div>
+        <input id="file-input" type="file" accept="audio/*,video/*" class="hidden" />
+      </div>
+
+      <div class="record-row">
+        <button id="record-btn" class="btn"><span data-i18n="record_start">Record</span></button>
+      </div>
+
+      <progress id="progress" value="0" max="100" class="hidden"></progress>
+      <div id="status-line" class="status-line" data-i18n="status_idle">Idle</div>
+
+      <audio id="player" controls class="hidden"></audio>
+
+      <div id="segments" class="segments"></div>
+
+      <div id="action-row" class="export-row hidden">
+        <button id="save-history-btn" class="btn btn-primary" data-i18n="save_history">Save to history</button>
+        <a id="export-txt" class="btn" data-i18n="export_txt">Download .txt</a>
+        <a id="export-srt" class="btn" data-i18n="export_srt">Download .srt</a>
+        <a id="export-vtt" class="btn" data-i18n="export_vtt">Download .vtt</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/i18n.js"></script>
+  <script src="/static/js/theme.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
